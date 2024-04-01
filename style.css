@@ -1,0 +1,420 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Neue Haas Unica';
+  src: local('Neue Haas Unica Bold'), local('Neue-Haas-Unica-Bold'),
+      url('NeueHaasUnica-Bold.woff2') format('woff2'),
+      url('NeueHaasUnica-Bold.woff') format('woff'),
+      url('NeueHaasUnica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+/* Set the gradient background for the body */
+html, body {
+    font-family:sans-serif;
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    overflow-x: hidden;
+
+  }
+  .custom-cursor {
+    pointer-events: none;
+    transition: transform 0.3s ease-out;
+    z-index: 1;
+    width: 15vw;
+    height: 15vw;
+    filter: blur(70px);
+    color: rgba(0, 0, 0, 0);
+    background-color: #ff0000;
+    border-radius: 49%;
+    display: block;
+    position: fixed;
+    top: -7.5vw;
+    bottom: 0%;
+    left: -7.5vw;
+    right: 0%;
+    overflow: visible;
+}
+
+.custom-cursor-dot {
+  will-change: transform;
+  transform: translate3d(0vw, 25.233vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  background-color: rgb(250, 4, 4);
+  width: 15vw;
+  height: 15vw;
+  position: fixed;
+  top: 99.992vh;
+  left: 77.26vw;
+  border-style: solid;
+  border-color: black;
+  border-radius: 50%;
+}
+
+.custom-cursor::before {
+  content: '';
+  position: absolute;
+  width: 200px; /* Adjust the size of the glow */
+  height: 200px; /* Adjust the size of the glow */
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0) 80%); /* Gradient-like red glow */
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.hidden-01 {
+  z-index: 3;
+  color: #ffeddc;
+  text-transform: uppercase;
+  font-family: neue-haas-unica, sans-serif;
+  font-size: 20px;
+  line-height: 100%;
+  position: absolute;
+  top: 12.6vh;
+  bottom: 0%;
+  left: 42.3vw;
+  right: 0%;
+  color: white; /* Default text color */
+  transition: color 0.3s ease; 
+}
+.hidden-02 {
+  z-index: 3;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 100%;
+  position: absolute;
+  top: 68vh;
+  bottom: 0%;
+  left: 9.5vw;
+  right: 37.5vh;
+}
+
+  .intro-page {
+    /* Your intro page styles */
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    background-color: black; /* Adjust background color */
+    transition: transform 1s ease; /* Animation duration and easing */
+    z-index: 999; /* Ensure it's above other content */
+}
+  
+.intro-page .nav {
+    display: none !important;
+  }
+
+.main-content {
+    /* Your main content styles */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1000; /* Ensure it's above the intro page after transition */
+}
+.transition-effect {
+  transition: transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Updated transition timing */
+}
+.main-content.fadeIn {
+  opacity: 1;
+ /* transition: opacity 0.5s ease-in-out;*/
+}
+.nav {
+    position: absolute;
+    top: 2%;
+    width: 100%;
+    background-color: transparent; /* Set the background color of the navbar */
+    z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.navbar-placeholder {
+    height: 30px; /* Adjust to match the height of your navbar */
+}
+
+/* Rest of your CSS styles... */
+
+.nav ul {
+    /* Your existing styles for the navigation */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Set the navbar width */
+}
+
+/* Display list items horizontally */
+.nav ul li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust as needed for spacing between items */
+    margin-left: 60px;
+}
+
+/* Style the logo */
+.nav ul li.logo {
+    /* Your existing styles for the logo */
+    margin-right: 150px; /* Add margin if needed between the logo and other items */
+    font-family: 'Arial', sans-serif; /* Change to preferred font-family */
+    font-size: 24px; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold if desired */
+    text-transform: uppercase; /* Transform text to uppercase */
+    color: red; /* Change the text color as needed */
+    /* Optionally, you can add other text-specific styles here */
+}
+
+/* Optionally, style the services and about */
+.nav ul li.list:hover {
+    color: red;
+    transition: opacity 1s ease;
+}
+
+.nav ul li.list {
+    cursor: none;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+}
+
+/* Optionally, style the links */
+.nav ul li a {
+  cursor: none;
+    text-decoration: none;
+    color: #000; /* Change the color as needed */
+}
+
+/* glass effect 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}*/
+
+.qte {
+  z-index: 4;
+  max-height: none;
+  color: red;
+  margin-top: 15vh; /* Adjust this value to create space between the text and the navbar */
+  margin-bottom: 20vh;
+  font-family: 'Playfair Display', serif;
+  font-size: 30vh;
+  font-weight: 400;
+  line-height: 82%;
+  position: relative;
+  overflow: visible;
+}
+
+.container {
+  font-family: Neue Haas Unica;
+  justify-content: center;
+  width: 100%;
+  padding: auto;
+  text-align: center;
+  padding-top: 10px;
+  
+}
+.container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.container h1 {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 5vh;
+  position: relative;
+  color: black;
+}
+.container h1::after {
+  content: '';
+  display: none;
+  justify-content: center;
+  background: red;
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  left: 50%;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Add this line to center the services vertically */
+  margin-top: 40px;
+  gap: 20px; /* Equal gap between service items */
+}
+
+.service {
+  cursor: none;
+  flex: 1;
+  text-align: center;
+  padding: 25px 30px;
+  border-radius: 5px;
+  font-size: 14px;
+  background: transparent;
+  transition: 0.5s;
+  max-width: 300px;
+  color: white;
+  margin-bottom: 60px;
+}
+
+.service h2 {
+  margin-bottom: 10px;
+}
+
+.service p {
+  margin-bottom: 0;
+}
+
+.container h1 {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 5vh;
+  position: relative;
+  color: black;
+
+}
+
+.container h1::after {
+  content: '';
+  display: none;
+  justify-content: center;
+  background: red;
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+}
+
+.service i{
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.service h2 {
+  color: black;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+
+.sec2{
+  z-index: 4;
+  max-height: none;
+  margin-top: 15vh; /* Adjust this value to create space between the text and the navbar */
+  line-height: 82%;
+  height: 23vh;
+  position: relative;
+  overflow: visible;
+}
+
+.service-description {
+  cursor: none;
+  font-family: Neue Haas Unica;
+  max-width: 100vw;
+  padding:  40px 40px;
+  margin-top: 60px;
+  overflow: hidden;
+  color: black;
+}
+
+.about-us {
+  color: white;
+  z-index: 1;
+  position: relative;
+  font-family: Neue Haas Unica;
+  width: 40%;
+  padding: auto;
+  text-align: left; /* Align text to the left */
+  padding-top: 10px;
+  /* Apply similar styles as the services container */
+  max-width: 100%;
+  padding: 70px 40px 40px;
+}
+.about-container{
+  background-color: black;
+  display: flex; /* Use flexbox to arrange items */
+  justify-content: space-between; /* Space items apart */
+  align-items: center;
+}
+
+.quote{
+  cursor: none;
+  z-index: 3;
+  color: black;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-size: 8vh;
+  line-height: 100%;
+  top: 12.6vh;
+  bottom: 0%;
+  font-size: vh;
+  font-weight: 400;  
+  transition: color 0.3s ease;
+}
+
+.footer {
+  background-color: black; /* Change this to the desired background color */
+  color: white; /* Set text color to black */
+  padding: 20px;
+  height: 19vh;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+.image-carousel {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; /* Set your desired height */
+  position: relative;
+}
+
+.image-container {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+
+
+.gradient {
+  z-index: 3;
+  width: 100vw;
+  height: 100%;
+  filter: blur();
+  object-fit: fill;
+  background-image: radial-gradient(circle farthest-side at 50% 100%, red 12%, #232323);
+  position: relative;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: hidden;
+}
+.contact{
+  cursor: none;
+  z-index: 3;
+  color: black;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  line-height: 100%;
+  font-size: 3vh;
+  font-weight: 400;  
+  transition: color 0.3s ease;
+  cursor: default;
+}
